@@ -1,0 +1,14 @@
+Stay Awake — Privacy
+
+The app runs locally and does not make network requests, collect analytics, create accounts or send your information to a server.
+
+Timer, mode, appearance and menu bar preferences are stored locally in macOS UserDefaults. Optional login registration is managed by macOS ServiceManagement.
+
+The app reads console lock/active-user state to pause screen protection while locked or switched away. It does not record or transmit that state. During a Screen and Mac session, it reports user activity without generating keyboard or mouse events.
+
+It does not request microphone, camera, contacts, documents, screen recording or Accessibility access.
+
+Documentation renderers and diagnostics use isolated temporary preferences. Developer notarization tooling submits the app binary to Apple only when explicitly run; the installed app does not do so.
+
+Details: https://github.com/jd-zhao/stay-awake/blob/main/docs/PRIVACY.md
+Questions: https://github.com/jd-zhao/stay-awake/issues

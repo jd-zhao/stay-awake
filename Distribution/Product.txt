@@ -1,0 +1,20 @@
+Stay Awake
+Native wake timers for macOS.
+
+A compact menu bar app for keeping your Mac awake for a chosen duration or until a specific time.
+
+• Keep the screen and Mac awake, or allow the screen to sleep while tasks run.
+• Choose a preset, enter hours and minutes, or select an end time.
+• Follow the system's light/dark appearance.
+• Optionally show the countdown in the menu bar and open at login.
+• Runs locally, with no account, advertising, analytics or network requests.
+
+Requires macOS 14 or later. Universal build for Apple Silicon and Intel.
+Manual lock, lid closure and managed-device policies can still apply.
+
+Source: https://github.com/jd-zhao/stay-awake
+Downloads: https://github.com/jd-zhao/stay-awake/releases/tag/v2.1.0
+Support: https://github.com/jd-zhao/stay-awake/issues
+License: MIT
+
+The current download is an ad-hoc-signed preview. It is not Developer ID signed or notarized by Apple.

@@ -1,0 +1,28 @@
+name: Bug report
+description: Report an app, timer, or interface problem.
+body:
+  - type: input
+    id: version
+    attributes:
+      label: Stay Awake version
+      placeholder: 2.1.0 preview
+    validations:
+      required: true
+  - type: input
+    id: system
+    attributes:
+      label: macOS version and Mac model
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true

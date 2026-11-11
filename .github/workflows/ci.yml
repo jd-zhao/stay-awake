@@ -1,0 +1,47 @@
+name: macOS build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: macos-15
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - name: Toolchain and resources
+        run: |
+          swift --version
+          zsh -n scripts/build.sh scripts/package.sh scripts/release.sh scripts/screenshots.sh
+          plutil -lint Resources/Info.plist Resources/PrivacyInfo.xcprivacy
+      - name: Build universal app
+        run: zsh scripts/build.sh "$RUNNER_TEMP/stayawake" --universal
+      - name: Verify architectures and code signature
+        run: |
+          xcrun lipo -verify_arch arm64 x86_64 "$RUNNER_TEMP/stayawake/Stay Awake.app/Contents/MacOS/StayAwake"
+          codesign --verify --deep --strict "$RUNNER_TEMP/stayawake/Stay Awake.app"
+      - name: Check power assertions and timers
+        run: '"$RUNNER_TEMP/stayawake/Stay Awake.app/Contents/MacOS/StayAwake" --self-check --wait-for-heartbeat'
+      - name: Package preview DMG
+        run: zsh scripts/package.sh "$RUNNER_TEMP/stayawake/Stay Awake.app"
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: Stay-Awake-preview
+          path: |
+            dist/Stay-Awake.zip
+            dist/Stay-Awake-*.dmg
+            dist/Stay-Awake-*.sha256
+          if-no-files-found: error
+          retention-days: 14
