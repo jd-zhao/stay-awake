@@ -4,7 +4,7 @@ A small, native macOS menu bar app that keeps your Mac awake with a timer you co
 
 **macOS 14+ · Apple Silicon & Intel · SwiftUI + AppKit · MIT**
 
-[Download v2.1.0 preview](https://github.com/jd-zhao/stay-awake/releases/tag/v2.1.0) · [中文说明](README.zh-CN.md) · [Report a bug](https://github.com/jd-zhao/stay-awake/issues/new/choose)
+[Download v2.1.0 preview](https://github.com/jd-zhao/stay-awake/releases/tag/v2.1.0) · [Report a bug](https://github.com/jd-zhao/stay-awake/issues/new/choose)
 
 > **Preview build:** the downloadable app is ad-hoc signed, not Developer ID signed or notarized by Apple. macOS may block it. You can build it locally from the source below. No notarized download is available yet.
 
