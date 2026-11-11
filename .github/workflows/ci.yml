@@ -30,7 +30,7 @@ jobs:
         run: zsh scripts/build.sh "$RUNNER_TEMP/stayawake" --universal
       - name: Verify architectures and code signature
         run: |
-          xcrun lipo -verify_arch arm64 x86_64 "$RUNNER_TEMP/stayawake/Stay Awake.app/Contents/MacOS/StayAwake"
+          xcrun lipo "$RUNNER_TEMP/stayawake/Stay Awake.app/Contents/MacOS/StayAwake" -verify_arch arm64 x86_64
           codesign --verify --deep --strict "$RUNNER_TEMP/stayawake/Stay Awake.app"
       - name: Check power assertions and timers
         run: '"$RUNNER_TEMP/stayawake/Stay Awake.app/Contents/MacOS/StayAwake" --self-check --wait-for-heartbeat'
