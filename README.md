@@ -6,8 +6,6 @@ A small, native macOS menu bar app that keeps your Mac awake with a timer you co
 
 [Download v2.1.0](https://github.com/jd-zhao/stay-awake/releases/tag/v2.1.0) · [Report a bug](https://github.com/jd-zhao/stay-awake/issues/new/choose)
 
-The app and DMG are Developer ID signed and notarized by Apple, with notarization tickets included. The signing identity is **Xiaoming Xu (9AY6H85KFP)**.
-
 <p>
   <img src="docs/images/main-light.png" width="328" alt="Stay Awake in light appearance">
   <img src="docs/images/main-dark.png" width="328" alt="Stay Awake in dark appearance">
@@ -57,7 +55,7 @@ zsh scripts/build.sh /tmp/stayawake-build --universal
 zsh scripts/package.sh '/tmp/stayawake-build/Stay Awake.app'
 ```
 
-Build output is under `dist/`. See [development and release notes](docs/DEVELOPMENT.md) for validation, reproducible UI images, and the Developer ID notarization workflow.
+Build output is under `dist/`. See the [development guide](docs/DEVELOPMENT.md) for build and release instructions.
 
 ## Validation and limits
 

@@ -45,6 +45,6 @@ zsh scripts/release.sh
 
 The script builds the universal app, signs with Hardened Runtime and a timestamp, submits it to Apple, checks for `Accepted`, staples the app, verifies Gatekeeper assessment, creates/signs/notarizes/staples the DMG, then updates the ZIP and checksum. It stops if signing or notarization fails. Running `build.sh` or GitHub Actions does not perform this notarization workflow.
 
-The bundle ID remains `local.stayawake.app` for compatibility with existing local preferences. It should be reviewed before a future separately branded or App Store release. The GitHub v2.1.0 app and DMG are Developer ID signed and notarized by Apple, with stapled tickets and passing Gatekeeper assessments. Local and CI builds use ad-hoc signing unless the release workflow is run with distribution credentials.
+The bundle ID remains `local.stayawake.app` for compatibility with existing local preferences. It should be reviewed before a future separately branded or App Store release.
 
 References: [Apple notarization](https://developer.apple.com/documentation/security/notarizing-macos-software-before-distribution), [user-activity assertion](https://developer.apple.com/documentation/iokit/1557127-iopmassertiondeclareuseractivity), [NSDatePicker](https://developer.apple.com/documentation/appkit/nsdatepicker).

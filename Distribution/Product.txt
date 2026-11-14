@@ -16,5 +16,3 @@ Source: https://github.com/jd-zhao/stay-awake
 Downloads: https://github.com/jd-zhao/stay-awake/releases/tag/v2.1.0
 Support: https://github.com/jd-zhao/stay-awake/issues
 License: MIT
-
-The app and DMG are Developer ID signed and notarized by Apple, with notarization tickets included.

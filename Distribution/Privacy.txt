@@ -8,7 +8,5 @@ The app reads console lock/active-user state to pause screen protection while lo
 
 It does not request microphone, camera, contacts, documents, screen recording or Accessibility access.
 
-Documentation renderers and diagnostics use isolated temporary preferences. Developer notarization tooling submits the app binary to Apple only when explicitly run; the installed app does not do so.
-
 Details: https://github.com/jd-zhao/stay-awake/blob/main/docs/PRIVACY.md
 Questions: https://github.com/jd-zhao/stay-awake/issues
